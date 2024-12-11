@@ -56,7 +56,7 @@ public class Scrabble {
 	// If the length of the word equals the length of the hand, adds 50 points to the score.
 	// If the word includes the sequence "runi", adds 1000 points to the game.
 	public static int wordScore(String word) {
-		//// Replace the following statement with your code
+
 		return 0;
 	}
 
@@ -64,7 +64,10 @@ public class Scrabble {
 	// into it, at random indexes, the letters 'a' and 'e'
 	// (these two vowels make it easier for the user to construct words)
 	public static String createHand() {
-		//// Replace the following statement with your code
+		int hand = HAND_SIZE - 2;
+		 
+		MyString.insertRandomly('a', );
+
 		return null;
 	}
 	
