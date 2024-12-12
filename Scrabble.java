@@ -115,15 +115,17 @@ public class Scrabble {
 			}
 			else {
 				if (isWordInDictionary(input)) {
-					hand = MyString.remove(hand, input);
-					score += wordScore(input);
-					System.out.println(input + " earned " + wordScore(input) + " points. " + "Score: " + score + " points");
-				}
-				else if (input.length() > 1) {
-					System.out.println("No such word in the dictionary. Try again.");
+					if(MyString.subsetOf(input, hand)) {
+						hand = MyString.remove(hand, input);
+						score += wordScore(input);
+						System.out.println(input + " earned " + wordScore(input) + " points. " + "Score: " + score + " points");
+					}
+					else {
+						System.out.println("Invalid word. Try again.");
+					}
 				}
 				else {
-					System.out.println("Invalid word. Try again.");
+					System.out.println("No such word in the dictionary. Try again.");
 				}
 			}
 		}
