@@ -52,6 +52,7 @@ public class Scrabble {
 			if (DICTIONARY[i].equals(word)) {
 				return true;
 			}
+			System.out.println("Word not found: " + word);
 		return false;
 	}
 	// Returns the Scrabble score of the given word.
