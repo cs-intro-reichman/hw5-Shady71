@@ -1,3 +1,5 @@
+import javax.print.attribute.standard.Sides;
+
 /*
  * RUNI version of the Scrabble game.
  */
@@ -52,7 +54,6 @@ public class Scrabble {
 			if (DICTIONARY[i].equals(word)) {
 				return true;
 			}
-			System.out.println("Word not found: " + word);
 		return false;
 	}
 	// Returns the Scrabble score of the given word.
@@ -119,6 +120,7 @@ public class Scrabble {
 						hand = MyString.remove(hand, input);
 						score += wordScore(input);
 						System.out.println(input + " earned " + wordScore(input) + " points. " + "Score: " + score + " points.");
+						System.out.println();
 					}
 					else {
 						System.out.println("No such word in the dictionary. Try again.");
