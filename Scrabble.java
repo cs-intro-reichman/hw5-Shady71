@@ -55,21 +55,20 @@ public class Scrabble {
 			}
 		return false;
 	}
-	
 	// Returns the Scrabble score of the given word.
 	// If the length of the word equals the length of the hand, adds 50 points to the score.
 	// If the word includes the sequence "runi", adds 1000 points to the game.
 	public static int wordScore(String word) {
 		int score = 0;
-		if (word.isEmpty() || !isWordInDictionary(word)) {
-			return 0;
-		}
-		else {
+		if (isWordInDictionary(word)) {
 			for (int i = 0; i < word.length(); i++) {
 				char currentCh = word.charAt(i);
 				int letterValue = currentCh - 'a';
 				score += SCRABBLE_LETTER_VALUES[letterValue];
 			}
+		}
+		else {
+			return 0;
 		}
 		int finalScore = score * word.length();
 
@@ -120,8 +119,11 @@ public class Scrabble {
 					score += wordScore(input);
 					System.out.println(input + " earned " + wordScore(input) + " points. " + "Score: " + score + " points");
 				}
-				else {
+				else if (input.length() > 1) {
 					System.out.println("No such word in the dictionary. Try again.");
+				}
+				else {
+					System.out.println("Invalid word. Try again.");
 				}
 			}
 		}
@@ -159,10 +161,10 @@ public class Scrabble {
 	public static void main(String[] args) {
 		//// Uncomment the test you want to run
 		////testBuildingTheDictionary();  
-		////testScrabbleScore();    
+		//testScrabbleScore();    
 		//testCreateHands();  
-		//testPlayHands();
-		playGame();
+		testPlayHands();
+		//playGame();
 	}
 
 	public static void testBuildingTheDictionary() {
@@ -190,6 +192,6 @@ public class Scrabble {
 		init();
 		//playHand("ocostrza");
 		//playHand("arbffip");
-		//playHand("aretiin");
+		playHand("aretiin");
 	}
 }
