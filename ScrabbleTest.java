@@ -109,7 +109,7 @@ public class ScrabbleTest {
         }
     }
 
-    private static void testPlayHandWithMockInput() {
+    public static void testPlayHandWithMockInput() {
         System.out.println("\nTesting playHand with mock input (hand: aretiin):");
         Scrabble.init();
         // Test with multiple valid words that can be made from "aretiin"
