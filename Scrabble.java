@@ -1,4 +1,3 @@
-
 /*
  * RUNI version of the Scrabble game.
  */
